@@ -1,0 +1,6 @@
+lamp54
+*/.vagrant
+vagrant.sublime-project
+vagrant.sublime-workspace
+/build/config/sites-enabled/*
+!/build/config/sites-enabled/000-default
