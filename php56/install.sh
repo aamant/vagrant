@@ -10,4 +10,5 @@ loadScript bower
 loadScript uglify
 loadScript less
 loadScript composer
+loadScript symfony
 loadScript mailDev
