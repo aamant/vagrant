@@ -1,9 +1,12 @@
 #! /bin/bash
 
-sudo apt-get -y install php7.0-cli php7.0-mcrypt php7.0-json php7.0-intl php7.0-mysql php7.0-curl libapache2-mod-php7.0
+sudo apt-get -y install php7.0-cli php7.0-mcrypt php7.0-json php7.0-intl php7.0-mysql php7.0-curl php7.0-gd libapache2-mod-php7.0
 
 cat << EOF | sudo tee -a /etc/php/7.0/mods-available/xdebug.ini
-xdebug.scream=1
+zend_extension=xdebug.so
+
+xdebug.remote_enable = on
+xdebug.remote_connect_back = on
 xdebug.cli_color=1
 xdebug.show_local_vars=1
 EOF

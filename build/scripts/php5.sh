@@ -1,9 +1,12 @@
 #! /bin/bash
 
-sudo apt-get -y install php5-cli php5-mcrypt php5-json php5-intl php5-mysql php5-curl libapache2-mod-php5
+sudo apt-get -y install php5-cli php5-mcrypt php5-json php5-intl php5-mysql php5-curl php5-gd php5-xdebug libapache2-mod-php5
 
-cat << EOF | sudo tee -a /etc/php5/mods-available/xdebug.ini
-xdebug.scream=1
+cat << EOF | sudo tee /etc/php5/mods-available/xdebug.ini
+zend_extension=xdebug.so
+
+xdebug.remote_enable = on
+xdebug.remote_connect_back = on
 xdebug.cli_color=1
 xdebug.show_local_vars=1
 EOF
